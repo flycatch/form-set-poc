@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Project List !</h1>
+<button><a href="/register/forms">Add New Project</a></button>
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+    <li>
+       <div>
+                   <a href="{% url 'project-details' object.id %}"> client name :  {{ object.client_name }}</a>
+       </div>
+        <div>
+                    project name : {{ object.project_name }}
+
+        </div>
+    </li>
+
+    <hr/>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
