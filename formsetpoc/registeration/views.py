@@ -34,6 +34,3 @@ class ListProjectDetailView(DetailView):
     model = Company
     template_name = "project_detail.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
